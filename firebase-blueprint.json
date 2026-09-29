@@ -1,0 +1,94 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User account profile for authenticated students",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique Firebase Auth UID"
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name"
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "User avatar photo URL"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when account was created"
+        },
+        "lastLogin": {
+          "type": "string",
+          "description": "Timestamp of most recent login"
+        }
+      },
+      "required": ["id", "createdAt"]
+    },
+    "SavedNotebook": {
+      "title": "SavedNotebook",
+      "description": "Persisted handwritten notebook document generated or edited by the user",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique notebook document ID"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the notebook owner"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the notebook"
+        },
+        "topic": {
+          "type": "string",
+          "description": "Topic or query that generated this notebook"
+        },
+        "targetPages": {
+          "type": "number",
+          "description": "Total number of pages"
+        },
+        "language": {
+          "type": "string",
+          "description": "Language used for the notes"
+        },
+        "style": {
+          "type": "string",
+          "description": "Study or note-taking style"
+        },
+        "pages": {
+          "type": "array",
+          "description": "Array of note pages with cards, tables, diagrams and stickies"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp ISO string"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last modified timestamp ISO string"
+        }
+      },
+      "required": ["id", "userId", "title", "topic", "pages", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores user profile documents where userId matches the auth UID"
+    },
+    "/users/{userId}/notebooks/{notebookId}": {
+      "schema": "SavedNotebook",
+      "description": "Stores user-specific saved handwritten notebooks and study sessions"
+    }
+  }
+}

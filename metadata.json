@@ -1,0 +1,6 @@
+{
+  "name": "KalamNotes - Handwritten AI Notes & Sticky Notes",
+  "description": "Generate and customize authentic handwritten-style ruled notebook study notes with sticky notes, diagrams, comparison tables, and multi-page export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

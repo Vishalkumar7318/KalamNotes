@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-kalam {
+    font-family: 'Kalam', cursive, sans-serif;
+  }
+  .font-caveat {
+    font-family: 'Caveat', cursive, sans-serif;
+  }
+  .font-patrick {
+    font-family: 'Patrick Hand', cursive, sans-serif;
+  }
+  .font-gochi {
+    font-family: 'Gochi Hand', cursive, sans-serif;
+  }
+  .font-indie {
+    font-family: 'Indie Flower', cursive, sans-serif;
+  }
+}
+
+/* Notebook ruled line backgrounds */
+.bg-notebook-ruled {
+  background-color: #faf8f5;
+  background-image: 
+    /* Red left vertical margin line (moves to 32px on small screens, 58px on md+) */
+    linear-gradient(to right, transparent 58px, #f87171 58px, #f87171 60px, transparent 60px),
+    /* Soft horizontal blue notebook lines (28px height) */
+    linear-gradient(to bottom, transparent 27px, #bae6fd 27px, #bae6fd 28px);
+  background-size: 100% 100%, 100% 28px;
+  background-repeat: no-repeat, repeat-y;
+}
+
+@media (max-width: 640px) {
+  .bg-notebook-ruled {
+    background-image: 
+      linear-gradient(to right, transparent 24px, #f87171 24px, #f87171 25px, transparent 25px),
+      linear-gradient(to bottom, transparent 25px, #bae6fd 25px, #bae6fd 26px);
+    background-size: 100% 100%, 100% 26px;
+  }
+}
+
+.bg-notebook-ruled-legal {
+  background-color: #fefce8;
+  background-image: 
+    linear-gradient(to right, transparent 58px, #ef4444 58px, #ef4444 60px, transparent 60px),
+    linear-gradient(to bottom, transparent 27px, #cbd5e1 27px, #cbd5e1 28px);
+  background-size: 100% 100%, 100% 28px;
+  background-repeat: no-repeat, repeat-y;
+}
+
+@media (max-width: 640px) {
+  .bg-notebook-ruled-legal {
+    background-image: 
+      linear-gradient(to right, transparent 24px, #ef4444 24px, #ef4444 25px, transparent 25px),
+      linear-gradient(to bottom, transparent 25px, #cbd5e1 25px, #cbd5e1 26px);
+    background-size: 100% 100%, 100% 26px;
+  }
+}
+
+.bg-notebook-grid {
+  background-color: #fcfbf9;
+  background-image: 
+    linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+    linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-notebook-dot {
+  background-color: #faf9f6;
+  background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+.bg-notebook-parchment {
+  background-color: #f7f3e8;
+  background-image: 
+    linear-gradient(to right, transparent 58px, #fca5a5 58px, #fca5a5 59px, transparent 59px),
+    linear-gradient(to bottom, transparent 27px, #e2d9c8 27px, #e2d9c8 28px);
+  background-size: 100% 100%, 100% 28px;
+}
+
+@media (max-width: 640px) {
+  .bg-notebook-parchment {
+    background-image: 
+      linear-gradient(to right, transparent 24px, #fca5a5 24px, #fca5a5 25px, transparent 25px),
+      linear-gradient(to bottom, transparent 25px, #e2d9c8 25px, #e2d9c8 26px);
+    background-size: 100% 100%, 100% 26px;
+  }
+}
+
+.bg-notebook-clean {
+  background-color: #ffffff;
+}
+
+/* Washi tape effect */
+.washi-tape {
+  background: rgba(254, 240, 138, 0.7);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 2px dashed rgba(202, 138, 4, 0.4);
+  border-right: 2px dashed rgba(202, 138, 4, 0.4);
+}
+
+.washi-tape-pink {
+  background: rgba(251, 207, 232, 0.75);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 2px dashed rgba(219, 39, 119, 0.4);
+  border-right: 2px dashed rgba(219, 39, 119, 0.4);
+}
+
+.washi-tape-blue {
+  background: rgba(186, 230, 253, 0.75);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 2px dashed rgba(2, 132, 199, 0.4);
+  border-right: 2px dashed rgba(2, 132, 199, 0.4);
+}
+
+/* Highlighter effect */
+.highlighter-yellow {
+  background: linear-gradient(104deg, rgba(254, 240, 138, 0) 0.9%, rgba(254, 240, 138, 0.85) 2.4%, rgba(254, 240, 138, 0.6) 94.6%, rgba(254, 240, 138, 0) 98%);
+}
+
+.highlighter-pink {
+  background: linear-gradient(104deg, rgba(251, 207, 232, 0) 0.9%, rgba(251, 207, 232, 0.85) 2.4%, rgba(251, 207, 232, 0.6) 94.6%, rgba(251, 207, 232, 0) 98%);
+}
+
+.highlighter-cyan {
+  background: linear-gradient(104deg, rgba(165, 243, 252, 0) 0.9%, rgba(165, 243, 252, 0.85) 2.4%, rgba(165, 243, 252, 0.6) 94.6%, rgba(165, 243, 252, 0) 98%);
+}
+
+.highlighter-green {
+  background: linear-gradient(104deg, rgba(187, 247, 208, 0) 0.9%, rgba(187, 247, 208, 0.85) 2.4%, rgba(187, 247, 208, 0.6) 94.6%, rgba(187, 247, 208, 0) 98%);
+}
+
+/* Print optimizations */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+  }
+}
